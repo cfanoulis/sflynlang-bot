@@ -3,7 +3,7 @@
 ![Node.JS CI](https://img.shields.io/github/workflow/status/sflynlang/sflynlang-bot/CI)
 ![Code Size](https://img.shields.io/github/repo-size/sflynlang/sflynlang-bot)
 
-Official Discord bot for Sflynlang server.
+This repository contains source code for the official Discord bot of Sflynlang server.
 
 ## Pre-requisites
 
@@ -33,7 +33,7 @@ $ npm install
 $ yarn add
 ```
 
-2. Build the project to production running the following command:
+2. Build the project to production by running the following command:
 
 ```bash
 # With npm
@@ -43,7 +43,7 @@ $ npm run start
 $ yarn run start
 ```
 
-3. Set the Discord bot token to the environment file:
+3. Set the Discord bot token to the following environment file configuration:
 
 ```
 DISCORD_TOKEN=Your token here
@@ -100,7 +100,7 @@ View the latest changes on [CHANGELOG.md](./CHANGELOG.md).
 
 - **Daniel Solarte** - Initial Work - [GitHub](https://github.com/danielsolartech)
 
-You can also view the [list of contributors](https://github.com/sflynlang/sflynlang-bot/contributors).
+You can also view the [list of contributors](https://github.com/sflynlang/sflynlang-bot/contributors) here.
 
 ## Licensing
 
