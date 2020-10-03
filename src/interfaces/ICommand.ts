@@ -7,13 +7,13 @@
  * @format
  */
 
-import ICommandType from './ICommandType';
-import IMessage from './IMessage';
+import ICommandType from "./ICommandType";
+import IMessage from "./IMessage";
 
 export interface ICommandMethods {
   /**
    * Command name.
-   * 
+   *
    * @readonly
    * @property
    */
@@ -21,7 +21,7 @@ export interface ICommandMethods {
 
   /**
    * Command arguments.
-   * 
+   *
    * @readonly
    * @property
    */
@@ -29,7 +29,7 @@ export interface ICommandMethods {
 
   /**
    * Command description.
-   * 
+   *
    * @readonly
    * @property
    */
@@ -39,20 +39,20 @@ export interface ICommandMethods {
 export interface ICommandExecution {
   /**
    * Execute the command.
-   * 
+   *
    * @async
    * @function
    * @param { IMessage } message
    * @param { string[] } args
    * @returns { Promise<void> }
    */
-  run(message: IMessage, args: string[]): Promise<void>;
+  run(message: IMessage, args: string[]): Promise<unknown>;
 }
 
 export default interface ICommand extends ICommandMethods, ICommandExecution {
   /**
    * Command type.
-   * 
+   *
    * @readonly
    * @property
    */

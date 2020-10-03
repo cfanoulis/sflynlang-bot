@@ -7,21 +7,21 @@
  * @format
  */
 
-import ICommand from '@Interfaces/ICommand';
-import ICommandType from '@Interfaces/ICommandType';
-import IMessage from '@Interfaces/IMessage';
+import ICommand from "@Interfaces/ICommand";
+import ICommandType from "@Interfaces/ICommandType";
+import IMessage from "@Interfaces/IMessage";
 
 /**
  * Empty command.
  * @class
  */
 class Command implements ICommand {
-  readonly name: string = '';
-  readonly description: string = '';
+  readonly name: string = "";
+  readonly description: string = "";
 
   readonly type: ICommandType = ICommandType.GENERAL;
 
-  async run(_message: IMessage, _args: string[]): Promise<void> {};
+  async run(_message: IMessage, _args: string[]): Promise<any> {}
 }
 
 export default Command;

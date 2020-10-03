@@ -17,6 +17,8 @@ import SetRole from "./developer/SetRole";
 import Help from "./general/Help";
 import Ping from "./general/Ping";
 import Suggestion from "./general/Suggestion";
+import UserAvatar from "./general/UserAvatar";
+
 
 /**
  * Commands Manager.
@@ -44,6 +46,7 @@ class CommandsManager {
     this.commands.push(new Help());
     this.commands.push(new Ping());
     this.commands.push(new Suggestion());
+    this.commands.push(new UserAvatar());
   }
 
   /**
