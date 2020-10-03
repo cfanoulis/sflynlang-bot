@@ -7,3 +7,4 @@
 - Help and Ping commands.
 - Command decorators.
 - MongoDB connection.
+- Add a UserAvatar command
