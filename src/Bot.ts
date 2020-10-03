@@ -7,12 +7,12 @@
  * @format
  */
 
-import { Client } from 'discord.js';
-import DatabaseManager from '@Database/Manager';
-import CommandsManager from '@Commands/Manager';
-import onGuildMemberAdd from '@Events/onGuildMemberAdd';
-import onMessage from '@Events/onMessage';
-import onReady from '@Events/onReady';
+import { Client } from "discord.js";
+import DatabaseManager from "@Database/Manager";
+import CommandsManager from "@Commands/Manager";
+import onGuildMemberAdd from "@Events/onGuildMemberAdd";
+import onMessage from "@Events/onMessage";
+import onReady from "@Events/onReady";
 
 /**
  * Bot Manager.
@@ -30,12 +30,12 @@ class Bot {
     this.database = new DatabaseManager();
     this.commands = new CommandsManager();
 
-    this.prefix = '';
+    this.prefix = "";
   }
 
   /**
    * Get the bot client.
-   * 
+   *
    * @function
    * @returns { Client }
    */
@@ -45,7 +45,7 @@ class Bot {
 
   /**
    * Get the database manager.
-   * 
+   *
    * @function
    * @returns { DatabaseManager }
    */
@@ -55,7 +55,7 @@ class Bot {
 
   /**
    * Get the command manager.
-   * 
+   *
    * @function
    * @returns { CommandsManager }
    */
@@ -65,7 +65,7 @@ class Bot {
 
   /**
    * Get the message prefix.
-   * 
+   *
    * @function
    * @returns { string }
    */
@@ -75,17 +75,17 @@ class Bot {
 
   /**
    * Get the Sflynlang icon url.
-   * 
+   *
    * @function
    * @returns { string }
    */
   getSflynIcon(): string {
-    return 'https://www.danielsolartech.com/images/sflyn_icon.jpg';
+    return "https://www.danielsolartech.com/images/sflyn_icon.jpg";
   }
 
   /**
    * Start the bot application.
-   * 
+   *
    * @async
    * @function
    * @returns { Promise<void> }
@@ -95,13 +95,13 @@ class Bot {
     await this.getDatabase().run();
 
     // Get prefix.
-    let prefixSetting = await this.getDatabase().getSettingByKey('prefix');
+    let prefixSetting = await this.getDatabase().getSettingByKey("prefix");
 
     if (!prefixSetting) {
       // Insert the default prefix to the database.
       prefixSetting = await this.getDatabase().getSettings().create({
-        key: 'prefix',
-        value: '!',
+        key: "prefix",
+        value: "!",
       });
     }
 
@@ -111,9 +111,15 @@ class Bot {
     this.getCommands().run();
 
     // Set events.
-    this.getClient().on('guildMemberAdd', async (member) => await onGuildMemberAdd(this, member))
-    this.getClient().on('message', async (message) => await onMessage(this, message));
-    this.getClient().on('ready', () => onReady(this));
+    this.getClient().on(
+      "guildMemberAdd",
+      async (member) => await onGuildMemberAdd(this, member)
+    );
+    this.getClient().on(
+      "message",
+      async (message) => await onMessage(this, message)
+    );
+    this.getClient().on("ready", () => onReady(this));
 
     // Log the bot.
     await this.getClient().login(process.env.DISCORD_TOKEN);
@@ -121,7 +127,7 @@ class Bot {
 
   /**
    * Async setTimeout.
-   * 
+   *
    * @async
    * @function
    * @param { number } miliseconds

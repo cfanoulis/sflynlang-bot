@@ -8,9 +8,9 @@
  */
 
 enum ICommandType {
-  DEVELOPER = 'developer',
-  GENERAL = 'general',
-  MODERATOR = 'moderator',
+  DEVELOPER = "developer",
+  GENERAL = "general",
+  MODERATOR = "moderator",
 }
 
 export default ICommandType;

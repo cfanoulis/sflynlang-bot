@@ -19,7 +19,6 @@ import Ping from "./general/Ping";
 import Suggestion from "./general/Suggestion";
 import UserAvatar from "./general/UserAvatar";
 
-
 /**
  * Commands Manager.
  * @class

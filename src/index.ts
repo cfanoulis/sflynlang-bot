@@ -7,12 +7,12 @@
  * @format
  */
 
-import 'module-alias/register';
-import Bot from '@Bot';
+import "module-alias/register";
+import Bot from "@Bot";
 
 // Check if the node is not in production mode.
-if (process.env.NODE_ENV !== 'production') {
-  const dotenv = require('dotenv');
+if (process.env.NODE_ENV !== "production") {
+  const dotenv = require("dotenv");
   dotenv.config();
 }
 

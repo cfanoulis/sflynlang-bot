@@ -7,11 +7,11 @@
  * @format
  */
 
-import Bot from '@Bot';
+import Bot from "@Bot";
 
 /**
  * On bot ready event.
- * 
+ *
  * @function
  * @param { Bot } bot
  * @returns { void }

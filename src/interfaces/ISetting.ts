@@ -7,7 +7,7 @@
  * @format
  */
 
-import { Document } from 'mongoose';
+import { Document } from "mongoose";
 
 /**
  * Setting document.

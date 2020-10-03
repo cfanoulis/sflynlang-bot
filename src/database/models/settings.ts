@@ -7,8 +7,8 @@
  * @format
  */
 
-import { Schema, model } from 'mongoose';
-import ISetting from '@Interfaces/ISetting';
+import { Schema, model } from "mongoose";
+import ISetting from "@Interfaces/ISetting";
 
 /**
  * Setting document structure.
@@ -26,4 +26,4 @@ const setting = new Schema({
   },
 });
 
-export default model<ISetting>('setting', setting);
+export default model<ISetting>("setting", setting);
