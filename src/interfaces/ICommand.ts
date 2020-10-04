@@ -46,7 +46,7 @@ export interface ICommandExecution {
    * @param { string[] } args
    * @returns { Promise<void> }
    */
-  run(message: IMessage, args: string[]): Promise<unknown>;
+  run(message: IMessage, args: string[]): Promise<void>;
 }
 
 export default interface ICommand extends ICommandMethods, ICommandExecution {

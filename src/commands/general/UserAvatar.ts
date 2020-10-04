@@ -7,7 +7,6 @@
  * @format
  */
 
-import Bot from "@Bot";
 import Command from "@Commands/Command";
 import command from "@Decorators/command";
 import { general } from "@Decorators/commandTypes";
@@ -26,16 +25,18 @@ export default class UserAvatarCommand extends Command {
   async run(message: IMessage, [userId]: string[]): Promise<void> {
     const parsedId = this.parseMention(userId) ?? userId;
     if (!parsedId) {
-      //@ts-expect-error
-      return message.channel.send("uhm, is that a valid ID?");
+      message.reply("Uhm, is that a valid ID?");
+      return;
     }
 
-    let user = await new Bot()
+    let user = await message.bot
       .getClient()
       .users.fetch(parsedId)
       .catch(() => {});
-    //@ts-expect-error
-    if (!user) return message.reply("Sorry, I couldn't find that user!");
+    if (!user) {
+      message.reply("Sorry, I couldn't find that user!");
+      return;
+    }
 
     message.channel.send(
       new MessageEmbed()

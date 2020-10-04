@@ -21,7 +21,7 @@ class Command implements ICommand {
 
   readonly type: ICommandType = ICommandType.GENERAL;
 
-  async run(_message: IMessage, _args: string[]): Promise<any> {}
+  async run(_message: IMessage, _args: string[]): Promise<void> {}
 }
 
 export default Command;
